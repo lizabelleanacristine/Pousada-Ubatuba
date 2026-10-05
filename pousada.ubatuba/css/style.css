@@ -1,0 +1,1115 @@
+@font-face {
+    font-family: "Moanas";
+    src: url("../fontes/Moanas.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Moanas", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(56, 189, 248, 0.15),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(14, 165, 233, 0.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #031827 0%,
+            #05324a 35%,
+            #064766 65%,
+            #075985 100%
+        );
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: "Moanas", Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: rgba(7, 26, 43, 0.96);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid transparent;
+    -border-image: lineargradient(
+        90deg,
+        #082f49,
+        #075985,
+        #0284c7,
+        #0ea5e9,
+        #38bdf8,
+        #7dd3fc
+    ) 1;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px);
+    transition: 0.35s;
+}
+
+header.header-scroll {
+    background-color: rgba(3, 24, 39, 0.98);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+nav {
+    max-width: 1500px;
+    margin: auto;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    transition: 0.35s;
+}
+
+.header-scroll nav {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo-area img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #38bdf8;
+    box-shadow:
+        0 0 18px rgba(56, 189, 248, 0.35),
+        0 0 35px rgba(14, 165, 233, 0.15);
+    transition: 0.35s;
+}
+
+.logo-area:hover img {
+    transform: rotate(-6deg) scale(1.06);
+    box-shadow:
+        0 0 24px rgba(56, 189, 248, 0.55),
+        0 0 45px rgba(14, 165, 233, 0.22);
+}
+
+.logo-area h1 {
+    margin: 0;
+    font-size: 33px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #bae6fd,
+        #38bdf8,
+        #0ea5e9
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 34px;
+    list-style: none;
+}
+
+nav a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    padding: 8px 0;
+    transition: 0.3s;
+}
+
+nav ul a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 20px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        90deg,
+        #075985,
+        #0ea5e9,
+        #7dd3fc
+    );
+    transition: 0.3s;
+}
+
+nav ul a:hover,
+nav ul a.ativo {
+    color: #7dd3fc;
+}
+
+nav ul a:hover::after,
+nav ul a.ativo::after {
+    width: 100%;
+}
+
+.menu-btn {
+    display: none;
+}
+
+#inicio {
+    position: relative;
+    min-height: 88vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.video-mar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 110%;
+    object-fit: cover;
+    z-index: 0;
+    transform: translateY(0);
+}
+
+.fundo-escuro {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(2, 17, 28, 0.15) 0%,
+        rgba(3, 24, 39, 0.40) 52%,
+        rgba(3, 24, 39, 0.95) 100%
+    );
+    z-index: 1;
+}
+
+.inicio-conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    padding: 55px 7%;
+    animation: entradaInicio 1.2s ease forwards;
+}
+
+.inicio-destaque {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 7px 18px;
+    border: 1px solid rgba(125, 211, 252, 0.5);
+    border-radius: 30px;
+    background: rgba(3, 24, 39, 0.35);
+    color: #bae6fd;
+    font-size: 18px;
+    backdrop-filter: blur(7px);
+}
+
+#inicio h2 {
+    margin-bottom: 24px;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.7),
+        0 0 28px rgba(56, 189, 248, 0.18);
+}
+
+.inicio-texto,
+#inicio > .inicio-conteudo > p:not(.inicio-destaque) {
+    max-width: 850px;
+    margin: 0 auto 36px;
+    color: #f0f9ff;
+    font-size: 22px;
+    line-height: 1.7;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.75);
+}
+
+.inicio-botoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn-inicio,
+.btn-principal,
+.btn-secundario,
+.btn-card,
+.btn-localizacao {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: 0.35s;
+}
+
+.btn-inicio,
+.btn-principal {
+    padding: 16px 34px;
+    border: 1px solid rgba(125, 211, 252, 0.6);
+    background: linear-gradient(
+        90deg,
+        #075985,
+        #0284c7,
+        #0ea5e9,
+        #38bdf8
+    );
+    font-size: 20px;
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(14, 165, 233, 0.18);
+}
+
+.btn-secundario {
+    padding: 16px 34px;
+    border: 1px solid rgba(186, 230, 253, 0.65);
+    background: rgba(3, 24, 39, 0.45);
+    font-size: 20px;
+    backdrop-filter: blur(7px);
+}
+
+.btn-inicio:hover,
+.btn-principal:hover,
+.btn-secundario:hover,
+.btn-card:hover,
+.btn-localizacao:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.32),
+        0 0 25px rgba(56, 189, 248, 0.28);
+}
+
+#pousada,
+#acomodacoes,
+#turismo,
+#localizacao,
+#contato {
+    position: relative;
+    padding: 100px 10%;
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(56, 189, 248, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(14, 165, 233, 0.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #031827 0%,
+            #05324a 35%,
+            #064766 65%,
+            #075985 100%
+        );
+}
+
+#pousada {
+    z-index: 3;
+    margin-top: -40px;
+    padding-top: 105px;
+    border-radius: 44px 44px 0 0;
+}
+
+#pousada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    border-radius: 30px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #075985,
+        #38bdf8,
+        #7dd3fc,
+        #38bdf8,
+        #075985,
+        transparent
+    );
+}
+
+#pousada h2,
+#acomodacoes h2,
+#turismo h2,
+#localizacao h2,
+#contato h2 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+#pousada > p {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    color: #e0f2fe;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+#pousada h3 {
+    position: relative;
+    z-index: 2;
+    margin-top: 60px;
+    margin-bottom: 34px;
+    color: #7dd3fc;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.subtitulo {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto 52px;
+    text-align: center;
+    color: #dff5ff;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.servicos {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 26px;
+}
+
+.servico {
+    position: relative;
+    min-height: 220px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(125, 211, 252, 0.38);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.07)
+    );
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transition: 0.35s;
+}
+
+.servico::before,
+.card-acomodacao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    z-index: 3;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #38bdf8,
+        #7dd3fc,
+        #38bdf8,
+        transparent
+    );
+}
+
+.servico:hover {
+    transform: translateY(-9px) scale(1.02);
+    border-color: #7dd3fc;
+    background: linear-gradient(
+        145deg,
+        rgba(56, 189, 248, 0.25),
+        rgba(14, 165, 233, 0.12)
+    );
+    box-shadow:
+        0 18px 36px rgba(0, 0, 0, 0.28),
+        0 0 24px rgba(56, 189, 248, 0.24);
+}
+
+.servico span {
+    font-size: 44px;
+    line-height: 1;
+    transition: 0.35s;
+}
+
+.servico:hover span {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.servico p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.cards-acomodacoes {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-acomodacao {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(125, 211, 252, 0.38);
+    border-radius: 20px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.07)
+    );
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transition: 0.35s;
+}
+
+.card-acomodacao:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #7dd3fc;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 26px rgba(56, 189, 248, 0.22);
+}
+
+.imagem-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.imagem-card img,
+.card-acomodacao > img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-acomodacao:hover .imagem-card img,
+.card-acomodacao:hover > img {
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+.selo-quarto {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    background: rgba(3, 24, 39, 0.8);
+    color: #ffffff;
+    border: 1px solid rgba(125, 211, 252, 0.5);
+    backdrop-filter: blur(7px);
+}
+
+.selo-quarto.premium {
+    background: linear-gradient(
+        90deg,
+        #075985,
+        #0ea5e9
+    );
+}
+
+.card-conteudo {
+    padding: 30px;
+}
+
+.card-conteudo h3 {
+    margin-bottom: 14px;
+    color: #7dd3fc;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.card-conteudo p {
+    margin-bottom: 16px;
+    color: #e0f2fe;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.card-conteudo > strong {
+    display: block;
+    margin-bottom: 18px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.preco {
+    margin: 20px 0;
+    padding: 18px;
+    border: 1px solid rgba(125, 211, 252, 0.22);
+    border-radius: 12px;
+    background: rgba(3, 24, 39, 0.28);
+}
+
+.preco-texto,
+.preco-noite,
+.preco > span {
+    display: block;
+    color: #bae6fd;
+    font-size: 15px;
+}
+
+.preco-valor,
+.preco > strong {
+    display: block;
+    margin: 3px 0;
+    color: #7dd3fc;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.card-conteudo ul {
+    margin-bottom: 25px;
+    padding-left: 22px;
+    color: #dff5ff;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.btn-card,
+.btn-localizacao {
+    padding: 13px 24px;
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    background: linear-gradient(
+        90deg,
+        #075985,
+        #0284c7,
+        #0ea5e9
+    );
+    font-size: 18px;
+}
+
+.painel-turismo {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.card-turismo {
+    overflow: hidden;
+    border: 1px solid rgba(125, 211, 252, 0.38);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.07)
+    );
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    transition: 0.35s;
+}
+
+.card-turismo:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: #7dd3fc;
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.26),
+        0 0 22px rgba(56, 189, 248, 0.18);
+}
+
+.card-turismo img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-turismo:hover img {
+    transform: scale(1.08);
+}
+
+.turismo-conteudo {
+    padding: 24px;
+}
+
+.card-turismo h3 {
+    margin-bottom: 10px;
+    color: #7dd3fc;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.card-turismo p {
+    color: #e0f2fe;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.localizacao-conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: auto;
+    padding: 42px;
+    border: 1px solid rgba(125, 211, 252, 0.38);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.07)
+    );
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    text-align: center;
+}
+
+.localizacao-conteudo h3 {
+    margin-bottom: 24px;
+    color: #7dd3fc;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.localizacao-conteudo p {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 19px;
+}
+
+.btn-localizacao {
+    margin-top: 20px;
+}
+
+#form-contato {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: auto;
+    padding: 38px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(125, 211, 252, 0.38);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.07)
+    );
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+#form-contato label {
+    margin-bottom: 8px;
+    color: #7dd3fc;
+    font-size: 18px;
+}
+
+#form-contato input,
+#form-contato textarea {
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 14px;
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    border-radius: 9px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.94);
+    color: #031827;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.16),
+        0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+#form-contato textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#form-contato button {
+    padding: 16px;
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    border-radius: 9px;
+    background: linear-gradient(
+        90deg,
+        #075985,
+        #0284c7,
+        #0ea5e9,
+        #38bdf8
+    );
+    color: #ffffff;
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#form-contato button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+#mensagem-form {
+    margin-top: 15px;
+    color: #7dd3fc;
+    text-align: center;
+    font-size: 18px;
+    min-height: 28px;
+}
+
+footer {
+    padding: 50px 10%;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #020f19 0%,
+        #031827 55%,
+        #05324a 100%
+    );
+    border-top: 3px solid #0ea5e9;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #38bdf8;
+}
+
+footer h3 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+footer p {
+    margin: 8px 0;
+    color: #bae6fd;
+    font-size: 18px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #dff5ff;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+#voltar-topo {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 900;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(125, 211, 252, 0.5);
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #075985,
+        #0ea5e9
+    );
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+#voltar-topo.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#voltar-topo:hover {
+    transform: translateY(-5px) scale(1.08);
+}
+
+.reveal,
+.reveal-card {
+    opacity: 0;
+    transform: translateY(55px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visivel,
+.reveal-card.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes entradaInicio {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    nav {
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .logo-area h1 {
+        font-size: 28px;
+    }
+
+    .servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-acomodacoes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .painel-turismo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 5%;
+    }
+
+    .logo-area img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-area h1 {
+        font-size: 24px;
+    }
+
+    .menu-btn {
+        display: block;
+        border: none;
+        background: none;
+        color: #ffffff;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 28px;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #071a2b;
+        border-bottom: 3px solid #0ea5e9;
+    }
+
+    nav ul.ativo {
+        display: flex;
+    }
+
+    #inicio {
+        min-height: 82vh;
+    }
+
+    #inicio h2 {
+        font-size: 43px;
+    }
+
+    .inicio-texto,
+    #inicio > .inicio-conteudo > p:not(.inicio-destaque) {
+        font-size: 19px;
+    }
+
+    .inicio-botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-inicio,
+    .btn-principal,
+    .btn-secundario {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    #pousada {
+        margin-top: -25px;
+        border-radius: 28px 28px 0 0;
+    }
+
+    #pousada,
+    #acomodacoes,
+    #turismo,
+    #localizacao,
+    #contato {
+        padding: 80px 6%;
+    }
+
+    #pousada h2,
+    #acomodacoes h2,
+    #turismo h2,
+    #localizacao h2,
+    #contato h2 {
+        font-size: 40px;
+    }
+
+    .servicos,
+    .cards-acomodacoes,
+    .painel-turismo {
+        grid-template-columns: 1fr;
+    }
+
+    .servico {
+        min-height: 190px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-area h1 {
+        font-size: 20px;
+    }
+
+    #inicio h2 {
+        font-size: 36px;
+    }
+
+    .inicio-texto,
+    #inicio > .inicio-conteudo > p:not(.inicio-destaque) {
+        font-size: 18px;
+    }
+
+    .inicio-conteudo {
+        padding: 35px 6%;
+    }
+
+    #pousada h2,
+    #acomodacoes h2,
+    #turismo h2,
+    #localizacao h2,
+    #contato h2 {
+        font-size: 34px;
+    }
+
+    #form-contato {
+        padding: 25px;
+    }
+
+    .card-conteudo {
+        padding: 24px;
+    }
+}

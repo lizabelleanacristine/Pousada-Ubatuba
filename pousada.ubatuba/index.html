@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pousada Lizabelle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <a href="#inicio" class="logo-area">
+                <img src="imagens/logo.png" alt="Logo da Pousada Lizabelle">
+                <h1>Pousada Lizabelle</h1>
+            </a>
+
+            <button class="menu-btn" id="menu-btn">☰</button>
+
+            <ul id="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#pousada">Pousada</a></li>
+                <li><a href="#acomodacoes">Acomodações</a></li>
+                <li><a href="#turismo">Turismo</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section id="inicio">
+
+            <video autoplay muted loop playsinline class="video-mar">
+                <source src="imagens/mar.mp4" type="video/mp4">
+            </video>
+
+            <div class="fundo-escuro"></div>
+
+            <div class="inicio-conteudo">
+
+                <p class="inicio-destaque">
+                    Ubatuba • São Paulo
+                </p>
+
+                <h2>
+                    Bem-vindo à Pousada Lizabelle
+                </h2>
+
+                <p>
+                    Momentos inesquecíveis em Ubatuba,
+                    com conforto, diversão e hospitalidade.
+                </p>
+
+                <div class="inicio-botoes">
+
+                    <a href="#acomodacoes" class="btn-principal">
+                        Ver acomodações
+                    </a>
+
+                    <a href="#contato" class="btn-secundario">
+                        Reservar agora
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="pousada">
+
+            <h2>A Pousada</h2>
+
+            <p>
+                A Pousada Lizabelle une conforto, tranquilidade e o clima leve de
+                Ubatuba. Um espaço acolhedor para descansar e aproveitar o litoral.
+            </p>
+
+            <p>
+                Próxima às praias e pontos turísticos, oferece café da manhã,
+                piscina, Wi-Fi, estacionamento e acomodações confortáveis.
+            </p>
+
+            <h3>Serviços</h3>
+
+            <div class="servicos">
+
+                <div class="servico">
+                    <span>☕</span>
+                    <p>Café da manhã</p>
+                </div>
+
+                <div class="servico">
+                    <span>🏊</span>
+                    <p>Piscina</p>
+                </div>
+
+                <div class="servico">
+                    <span>📶</span>
+                    <p>Wi-Fi gratuito</p>
+                </div>
+
+                <div class="servico">
+                    <span>🚗</span>
+                    <p>Estacionamento</p>
+                </div>
+
+                <div class="servico">
+                    <span>🛎️</span>
+                    <p>Recepção</p>
+                </div>
+
+                <div class="servico">
+                    <span>🌴</span>
+                    <p>Área de lazer</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="acomodacoes">
+
+            <h2>Acomodações</h2>
+
+            <p class="subtitulo">
+                Quartos confortáveis para diferentes tipos de hóspedes.
+            </p>
+
+            <div class="cards-acomodacoes">
+
+                <div class="card-acomodacao">
+
+                    <img src="imagens/suite-casal.jpg" alt="Suíte Casal">
+
+                    <div class="card-conteudo">
+
+                        <h3>Suíte Casal</h3>
+
+                        <p>
+                            Ideal para casais que procuram conforto e tranquilidade.
+                        </p>
+
+                        <strong>Capacidade: 2 pessoas</strong>
+
+                        <div class="preco">
+                            <span>A partir de</span>
+                            <strong>R$ 289</strong>
+                            <span>por noite</span>
+                        </div>
+
+                        <ul>
+                            <li>Cama de casal</li>
+                            <li>Ar-condicionado</li>
+                            <li>Wi-Fi</li>
+                            <li>TV</li>
+                        </ul>
+
+                        <a
+                            href="#contato"
+                            class="btn-card reservar"
+                            data-suite="Suíte Casal"
+                        >
+                            Reservar suíte
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="card-acomodacao">
+
+                    <img src="imagens/suite-familia.jpg" alt="Suíte Família">
+
+                    <div class="card-conteudo">
+
+                        <h3>Suíte Família</h3>
+
+                        <p>
+                            Espaçosa e confortável para famílias aproveitarem
+                            a viagem juntas.
+                        </p>
+
+                        <strong>Capacidade: 4 pessoas</strong>
+
+                        <div class="preco">
+                            <span>A partir de</span>
+                            <strong>R$ 429</strong>
+                            <span>por noite</span>
+                        </div>
+
+                        <ul>
+                            <li>Cama de casal</li>
+                            <li>Duas camas de solteiro</li>
+                            <li>Ar-condicionado</li>
+                            <li>Wi-Fi</li>
+                            <li>TV</li>
+                        </ul>
+
+                        <a
+                            href="#contato"
+                            class="btn-card reservar"
+                            data-suite="Suíte Família"
+                        >
+                            Reservar suíte
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="card-acomodacao">
+
+                    <img src="imagens/suite-premium.jpg" alt="Suíte Premium">
+
+                    <div class="card-conteudo">
+
+                        <h3>Suíte Premium</h3>
+
+                        <p>
+                            Para quem procura uma experiência ainda mais confortável.
+                        </p>
+
+                        <strong>Capacidade: 2 pessoas</strong>
+
+                        <div class="preco">
+                            <span>A partir de</span>
+                            <strong>R$ 549</strong>
+                            <span>por noite</span>
+                        </div>
+
+                        <ul>
+                            <li>Cama king size</li>
+                            <li>Ar-condicionado</li>
+                            <li>Wi-Fi</li>
+                            <li>TV</li>
+                            <li>Varanda</li>
+                        </ul>
+
+                        <a
+                            href="#contato"
+                            class="btn-card reservar"
+                            data-suite="Suíte Premium"
+                        >
+                            Reservar suíte
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="turismo">
+
+            <h2>Conheça Ubatuba</h2>
+
+            <p class="subtitulo">
+                Alguns lugares incríveis para conhecer durante sua viagem.
+            </p>
+
+            <div class="painel-turismo">
+
+                <div class="card-turismo">
+
+                    <img src="imagens/itamambuca.jpg" alt="Itamambuca">
+
+                    <div class="turismo-conteudo">
+                        <h3>Itamambuca</h3>
+                        <p>
+                            Uma das praias mais famosas de Ubatuba,
+                            muito procurada por surfistas.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-turismo">
+
+                    <img src="imagens/praia-felix.jpg" alt="Praia do Félix">
+
+                    <div class="turismo-conteudo">
+                        <h3>Praia do Félix</h3>
+                        <p>
+                            Praia cercada pela natureza e conhecida
+                            por suas belas paisagens.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-turismo">
+
+                    <img src="imagens/ilha-anchieta.jpg" alt="Ilha Anchieta">
+
+                    <div class="turismo-conteudo">
+                        <h3>Ilha Anchieta</h3>
+                        <p>
+                            Ilha com praias, trilhas e natureza preservada.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-turismo">
+
+                    <img src="imagens/tamar.jpg" alt="Projeto Tamar">
+
+                    <div class="turismo-conteudo">
+                        <h3>Projeto Tamar</h3>
+                        <p>
+                            Projeto dedicado à conservação
+                            das tartarugas marinhas.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-turismo">
+
+                    <img src="imagens/aquario.jpg" alt="Aquário de Ubatuba">
+
+                    <div class="turismo-conteudo">
+                        <h3>Aquário de Ubatuba</h3>
+                        <p>
+                            Uma atração para conhecer diferentes
+                            espécies da vida marinha.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card-turismo">
+
+                    <img src="imagens/prumirim.jpg" alt="Cachoeira do Prumirim">
+
+                    <div class="turismo-conteudo">
+                        <h3>Cachoeira do Prumirim</h3>
+                        <p>
+                            Cachoeira cercada pela Mata Atlântica
+                            e próxima ao litoral.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="localizacao">
+
+            <h2>Localização</h2>
+
+            <div class="localizacao-conteudo">
+
+                <h3>Onde estamos</h3>
+
+                <p>📍 Ubatuba - São Paulo</p>
+                <p>🏖️ Próxima às principais praias</p>
+                <p>🐢 Próxima ao Projeto Tamar</p>
+                <p>🏙️ Fácil acesso ao centro</p>
+
+            </div>
+
+        </section>
+
+        <section id="contato">
+
+            <h2>Contato</h2>
+
+            <p class="subtitulo">
+                Entre em contato com a Pousada Lizabelle.
+            </p>
+
+            <form id="form-contato">
+
+                <label for="nome">Nome</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                >
+
+                <label for="email">E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                >
+
+                <label for="telefone">Telefone</label>
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    placeholder="Digite seu telefone"
+                >
+
+                <label for="mensagem">Mensagem</label>
+
+                <textarea
+                    id="mensagem"
+                    placeholder="Digite sua mensagem"
+                ></textarea>
+
+                <button type="submit">
+                    Enviar mensagem
+                </button>
+
+                <p id="mensagem-form"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <img src="imagens/logo.png" alt="Logo Pousada Lizabelle">
+
+            <h3>Pousada Lizabelle</h3>
+
+        </div>
+
+        <p>Ubatuba - São Paulo</p>
+
+        <p>© 2026 Pousada Lizabelle</p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
